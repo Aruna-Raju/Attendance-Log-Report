@@ -70,6 +70,8 @@
             transition: 0.3s;
             width: 19%;
             display: inline-block;
+            padding: 0px;
+            margin: 5px;
         }
 
         .card:hover {
@@ -98,14 +100,16 @@
                   </ul>
                 </div>
 
-                <div class="container-fluid" id="employee_report" style="">
-                    <div class="row" style="border: 1px solid #313131;">
-                        <div class="col-xs-3">
-                            <div id="calendar" ></div>
+                <div class="container-fluid" id="employee_report">
+                    <div class="row">
+                        <div class="col-md-offset-4 col-md-3" style="margin-bottom: 10px;">
+                            <input class="form-control" type="date" name="end_date" id="end_date" required>
                         </div>
+                    </div> 
 
-                        <div class="col-xs-9">
-                            <table class="table table-responsive">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-responsive table-bordered">
                                 <thead style="background-color: #363636; color: #ffffff;">
                                     <th style="text-align: center;">Employee ID</th>
                                     <th style="text-align: center;">Employee Name</th>
@@ -191,9 +195,10 @@
                         </div>
                     </div>
                     <br><br>
+
                     <div class="row" style="text-align: center;">
                         <div class="col-xs-12" style="overflow-x: scroll;">
-                            <div class="card">
+                            <div class="col-xs-2 card">
                                 <table class="table table-responsive">
                                     <thead style="background-color: #363636; color: #ffffff;">
                                         <tr>
@@ -249,7 +254,7 @@
 
                                 </table>
                             </div>
-                            <div class="card">
+                            <div class="col-xs-2 card">
                                 <table class="table table-responsive">
                                     <thead style="background-color: #363636; color: #ffffff;">
                                         <tr>
@@ -305,7 +310,7 @@
 
                                 </table>
                             </div>
-                            <div class="card">
+                            <div class="col-xs-2 card">
                                 <table class="table table-responsive">
                                     <thead style="background-color: #363636; color: #ffffff;">
                                         <tr>
@@ -361,7 +366,7 @@
 
                                 </table>
                             </div>
-                            <div class="card">
+                            <div class="col-xs-2 card">
                                 <table class="table table-responsive">
                                     <thead style="background-color: #363636; color: #ffffff;">
                                         <tr>
@@ -417,7 +422,7 @@
 
                                 </table>
                             </div>
-                            <div class="card">
+                            <div class="col-xs-2 card">
                                 <table class="table table-responsive">
                                     <thead style="background-color: #363636; color: #ffffff;">
                                         <tr>
@@ -473,7 +478,7 @@
 
                                 </table>
                             </div>
-                            <div class="card">
+                            <div class="col-xs-2 card">
                                 <table class="table table-responsive">
                                     <thead style="background-color: #363636; color: #ffffff;">
                                         <tr>
@@ -529,7 +534,7 @@
 
                                 </table>
                             </div>
-                            <div class="card">
+                            <div class="col-xs-2 card">
                                 <table class="table table-responsive">
                                     <thead style="background-color: #363636; color: #ffffff;">
                                         <tr>
@@ -585,7 +590,7 @@
 
                                 </table>
                             </div>
-                            <div class="card">
+                            <div class="col-xs-2 card">
                                 <table class="table table-responsive">
                                     <thead style="background-color: #363636; color: #ffffff;">
                                         <tr>
@@ -641,7 +646,7 @@
 
                                 </table>
                             </div>
-                            <div class="card">
+                            <div class="col-xs-2 card">
                                 <table class="table table-responsive">
                                     <thead style="background-color: #363636; color: #ffffff;">
                                         <tr>
@@ -697,7 +702,7 @@
 
                                 </table>
                             </div>
-                            <div class="card">
+                            <div class="col-xs-2 card">
                                 <table class="table table-responsive">
                                     <thead style="background-color: #363636; color: #ffffff;">
                                         <tr>
@@ -754,14 +759,13 @@
                                 </table>
                             </div>
                             
+                        </div>
                     </div>
+
                 </div>
 
-
             </div>
-
         </div>
-
 
 
         <script>
