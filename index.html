@@ -19,44 +19,92 @@
         body{
             font-family: 'Assistant';font-size: 16px;
         }
-        .navbar h3{
+        .navbar h4{
             color: white;
-            font-size: 20px; 
-            margin: 10px auto;
         }
 
-        .navbar h6{
+        .navbar h5{
             color: white;
             font-variant: small-caps;
-            font-size: 16px; 
-            margin: 10px auto;
+            
         }
 
-        
-         .navbar-fixed-left {
-          width: 150px;
-          margin-top: 70px;
-          position: fixed;
-          border-radius: 0;
+        .sidenav {
           height: 100%;
-        }
-        .navbar-fixed-left .navbar-nav > li {
-          float: none;  /* Cancel default li float: left */
-          width: 100%;
-        }
-        .navbar-fixed-left .navbar-nav:active{
-            color: #ffffff;   
-        }
-         .navbar-fixed-left + .container {
-          padding-left: 160px;
-        }
-        .navbar-fixed-left + .container + .container {
-          padding-left: 160px;
-        }
-        .navbar-fixed-left + .employee_list {
-          padding-left: 150px;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: #2D2D2D;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+          border: 1px solid rgb(218,218,218);
         }
 
+        .sidenav a {
+          padding: 10px;
+          text-decoration: none;
+          font-size: 15px;
+          color: #ffffff;
+          font-weight: 600;
+          display: block;
+          transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+          color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        #main {
+          transition: margin-left .5s;
+          padding: 5px;
+        }
+        #main span{
+            color: rgb(218,218,218);
+        }
+
+        @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 15px;}
+          .sidenav a {font-size: 18px;}
+        }
+
+
+
+        @media screen and (min-width: 768px){
+            .navbar-fixed-left {
+              width: 150px;
+              margin-top: 60px;
+              position: fixed;
+              border-radius: 0;
+              height: 100%;
+              z-index: 999;
+            }
+            .navbar-fixed-left .navbar-nav > li {
+              float: none;  /* Cancel default li float: left */
+              width: 100%;
+            }
+            .navbar-fixed-left .navbar-nav:active{
+                color: #ffffff;   
+            }
+             .navbar-fixed-left + .container {
+              padding-left: 160px;
+            }
+            .navbar-fixed-left + .container + .container {
+              padding-left: 160px;
+            }
+            .navbar-fixed-left + .employee_list {
+              padding-left: 150px;
+            }
+        }
         #employee_list{
             margin-top: 90px;
         }
@@ -102,15 +150,30 @@
 
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top" style="">
-            <div class="container-fluid">
-                <h3>Ansara Business Solution<h6>Log Timing Management</h6><h3>
+        <nav class="navbar navbar-inverse navbar-fixed-top col-xs-12" style="">
+            <div class="col-xs-2">
+                <div class="navbar-header hidden-sm hidden-md hidden-lg">
+                    <div id="mySidenav" class="sidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <a>Employee List</a>
+                        <a href="report.html">Employe Daily Log Reports</a>
+                        <a href="#">Logout</a>
+                    </div>
+                    <div id="main">
+                        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+                    </div>
+                </div>
             </div>
+            <div class="col-xs-8">
+                <center><h4>Ansara Business Solution<h5>Log Timing Management</h5></h4></center>
+            </div>
+            <div class="col-xs-2"></div>
+                
         </nav>
 
         <div class="container-fluid employee">
             <div class="row">
-                <div class="navbar navbar-inverse navbar-fixed-left" style="">
+                <div class="navbar navbar-inverse navbar-fixed-left hidden-xs" style="">
                   <ul class="nav navbar-nav">
                    <li><a>Employee List</a></li>
                    <li><a href="report.html">Employe Daily Log Reports</a></li>
@@ -118,7 +181,7 @@
                 </div>
 
 
-                <div class="container" id="employee_list">
+                <div class="container col-xs-12" id="employee_list">
                     <button class="collapsible">Employee 1</button>
                     <div class="content">
                         <table class="table table-responsive">
@@ -271,6 +334,21 @@
                 </div>
             </div>
         </div>
+
+
+        <script>
+            function openNav() {
+              document.getElementById("mySidenav").style.width = "200px";
+              document.getElementById("main").style.marginLeft = "0px";
+              
+            }
+
+            function closeNav() {
+              document.getElementById("mySidenav").style.width = "0";
+              document.getElementById("main").style.marginLeft= "0";
+             
+            }
+            </script>
 
     <script>
         var coll = document.getElementsByClassName("collapsible");
